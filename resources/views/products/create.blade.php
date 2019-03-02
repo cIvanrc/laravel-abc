@@ -14,16 +14,17 @@
                   Crear producto
                </div>
                <div class="card-body">
-                 <form action="">
+                 <form action="{{ route('products.store') }}" method='POST'>
+                     @csrf
                     <div class="form-group">
                        <label for="">Descripcion</label>
-                       <input class="form-control" type="text">
+                       <input class="form-control" type="text" name='description'>
                     </div>
                     <div class="form-group">
                        <label for="">Precio</label>
-                       <input class="form-control" type="number">
+                       <input class="form-control" type="number" name="price">
                     </div>
-                     <button class="btn btn-primary">Guardar</button>
+                     <button class="btn btn-primary" type="submit">Guardar</button>
                      <a class="btn btn-danger" href="{{ route('products.index') }}">Cancelar</a>
                  </form> 
                </div>
