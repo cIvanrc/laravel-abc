@@ -24,7 +24,7 @@
                        <input class="form-control" type="number">
                     </div>
                      <button class="btn btn-primary">Guardar</button>
-                     <a class="btn btn-danger" href="">Cancelar</a>
+                     <a class="btn btn-danger" href="{{ route('products.index') }}">Cancelar</a>
                  </form> 
                </div>
             </div>
