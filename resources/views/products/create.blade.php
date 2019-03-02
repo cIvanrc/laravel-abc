@@ -11,11 +11,21 @@
          <div class="col-md-12">
             <div class="card">
                <div class="card-header">
-                  Litasdo de productos
-                  <a class="btn btn-success btn-sm float-right" href=" {{ route('products.create') }}">Nuevo producto</a>
+                  Crear producto
                </div>
                <div class="card-body">
-                  ...
+                 <form action="">
+                    <div class="form-group">
+                       <label for="">Descripcion</label>
+                       <input class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                       <label for="">Precio</label>
+                       <input class="form-control" type="number">
+                    </div>
+                     <button class="btn btn-primary">Guardar</button>
+                     <a class="btn btn-danger" href="">Cancelar</a>
+                 </form> 
                </div>
             </div>
          </div>
