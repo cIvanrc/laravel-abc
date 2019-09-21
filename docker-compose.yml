@@ -1,0 +1,38 @@
+version: '3.5'
+
+volumes:
+  postgres_data:
+
+networks:
+  backend:
+
+services:
+  laravel-app:
+    build:
+      context: '.'
+      args:
+        uid: 1000
+    container_name: laravel-app
+    environment:
+      - APACHE_RUN_USER=#1000
+      - APACHE_RUN_GROUP=#1000
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8000:80
+    networks:
+    - backend
+
+  postgres:
+    image: postgres:10.6-alpine
+    volumes:
+      # We'll store the postgres data in the 'postgres_data' volume we defined:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 3x4mpl3P455w0rd
+      POSTGRES_DB: postgres_db
+    networks:
+    - backend

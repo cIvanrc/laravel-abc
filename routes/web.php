@@ -13,9 +13,13 @@
 use Illuminate\Http\Request;
 use App\Product;
 
+Route::get("/", function () {
+   return view("welcome");
+});
+
 Route::get('products', function(){
    $products = Product::all();
-    
+
    return view("products.index", compact('products'));
 })->name('products.index');
 
